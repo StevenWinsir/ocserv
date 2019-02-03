@@ -126,7 +126,7 @@ certtool --generate-crl --load-ca-privkey ca-key.pem \
 #配置 ocserv
 cd /etc/ocserv/
 rm -rf ocserv.conf
-wget https://raw.githubusercontent.com/chendong12/ocserv/master/ocserv.conf
+wget https://github.com/StevenWinsir/ocserv/blob/master/ocserv.conf
 #
 cd /root/anyconnect
 wget https://raw.githubusercontent.com/chendong12/ocserv/master/gen-client-cert.sh
