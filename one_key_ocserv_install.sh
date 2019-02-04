@@ -130,8 +130,8 @@ wget https://raw.githubusercontent.com/StevenWinsir/ocserv/master/ocserv.conf
 #
 cd /root/anyconnect
 wget https://raw.githubusercontent.com/StevenWinsir/ocserv/master/gen-client-cert.sh
-wget https://raw.githubusercontent.com/ocserv/master/user_add.sh
-wget https://raw.githubusercontent.com/ocserv/master/user_del.sh
+wget https://raw.githubusercontent.com/StevenWinsir/ocserv/master/user_add.sh
+wget https://raw.githubusercontent.com/StevenWinsir/ocserv/master/user_del.sh
 chmod +x gen-client-cert.sh
 chmod +x user_add.sh
 chmod +x user_del.sh
