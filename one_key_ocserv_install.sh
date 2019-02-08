@@ -136,21 +136,20 @@ chmod +x gen-client-cert.sh
 chmod +x user_add.sh
 chmod +x user_del.sh
 }
-centos3_iptables(){
+function centos3_iptables(){
 service iptables stop
+firewall-cmd --permanent --add-port=443/tcp
+firewall-cmd --permanent --add-port=443/udp
+firewall-cmd --permanent --add-masquerade
+firewall-cmd --reload 
 echo 1 > /proc/sys/net/ipv4/ip_forward
 echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
 sysctl -p
 chmod +x /etc/rc.d/rc.local
 cat >>  /etc/rc.d/rc.local <<EOF
 service ocserv start
-service iptables stop
 service httpd start
-echo 1 > /proc/sys/net/ipv4/ip_forward
-firewall-cmd --permanent --add-port=443/tcp
-firewall-cmd --permanent --add-port=443/udp
-firewall-cmd --permanent --add-masquerade
-firewall-cmd --reload    
+echo 1 > /proc/sys/net/ipv4/ip_forward  
 #自动调整mtu，ocserv服务器使用
 iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 EOF
