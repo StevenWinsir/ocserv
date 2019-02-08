@@ -149,7 +149,6 @@ service httpd start
 echo 1 > /proc/sys/net/ipv4/ip_forward
 firewall-cmd --permanent --add-port=443/tcp
 firewall-cmd --permanent --add-port=443/udp
-firewall-cmd --permanent --add-port=9090/tcp
 firewall-cmd --permanent --add-masquerade
 firewall-cmd --reload    
 #自动调整mtu，ocserv服务器使用
