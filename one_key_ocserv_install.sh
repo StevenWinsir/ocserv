@@ -1,12 +1,4 @@
 #!/bin/bash
-#######################################################
-#                                                     #
-# This is a ocserv installation for CentOS 7 and 6    #
-# Version: 1.1.1 20181101                             #
-# Author: haolong,zcm8483@gmail.com                   #
-# Website: https://github.com/chendong12/ocserv       #
-#                                                     #
-####################################################
 #
 #检测是否是root用户
 function check_root(){
